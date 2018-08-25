@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, ReactPropTypes } from 'react'
 import { Text, View, TouchableOpacity, StyleSheet } from "react-native"
 import { connect } from 'react-redux'
 import {style} from './Styles'
@@ -18,7 +18,6 @@ export class Counter extends Component<Props, State> {
 
     constructor(props: Props) {
         super(props)
-        console.log(props, '[]')
     }
 
     a = (action: boolean) => {
