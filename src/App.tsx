@@ -14,16 +14,16 @@ import {combineReducers,createStore} from 'redux'
 import {Reducer} from './Reducers/Index'
 import {Provider} from "react-redux"
 import Counter from "./Components/Counter/Index"
-
+import {createBottomTabNavigators} from "./Screens/Navigation/index"
 const store = createStore(Reducer)
-
+const RoutesStack = createBottomTabNavigators;
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
       <Provider store={store}>
-        <Counter/>
+        <RoutesStack />
       </Provider>
     );
   }
