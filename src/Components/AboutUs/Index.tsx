@@ -18,6 +18,7 @@ class AboutUs extends Component<Props, State> {
       />
     ),
   }
+  
   render() {
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: 'maroon', justifyContent: 'center', alignItems: 'center' }}>

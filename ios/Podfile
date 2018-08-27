@@ -1,0 +1,29 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'ReactNativeReduxApp' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for ReactNativeReduxApp
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
+  target 'ReactNativeReduxApp-tvOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+    # pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+  end
+
+  target 'ReactNativeReduxAppTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+
+target 'ReactNativeReduxApp-tvOS' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for ReactNativeReduxApp-tvOS
+end

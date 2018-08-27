@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import { Text, Button , SafeAreaView,StatusBar} from "react-native"
-import {connect} from "react-redux"
+import { Text, Button, SafeAreaView, StatusBar,Image } from "react-native"
+import { connect } from "react-redux"
 
-type Props = { navigation: any, navigationOptions: any,counter:any }
+
+
+type Props = { navigation: any, navigationOptions: any, counter: any }
 type State = {}
 
 export class Home extends Component<Props, State> {
@@ -19,14 +21,15 @@ export class Home extends Component<Props, State> {
                 title="Info"
                 color="#fff"
             />
-        ),
+        )
     }
+
 
     render() {
         return (
-            <SafeAreaView style={{flex:1,backgroundColor:'blue',justifyContent: 'center',alignItems: 'center'}}>
-                <StatusBar barStyle="light-content" backgroundColor="#6a51ae"/>
-                <Text onPress={()=>{
+            <SafeAreaView style={{ flex: 1, backgroundColor: 'blue', justifyContent: 'center', alignItems: 'center' }}>
+                <StatusBar barStyle="light-content" backgroundColor="#6a51ae" />
+                <Text onPress={() => {
                     this.props.navigation.push("AboutUs")
                 }}>
                     Welcome to Home
