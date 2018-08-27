@@ -32,10 +32,10 @@ export class Home extends Component<Props, State> {
 
     render() {
         return (
-            <SafeAreaView>
+            <SafeAreaView style={{flex:1,backgroundColor:'blue'}}>
                 <StatusBar barStyle="light-content" backgroundColor="#6a51ae"/>
                 <Text onPress={()=>{
-                    this.props.navigation.push("AboutUs")
+                    this.props.navigation.push("Counter")
                 }}>
                     Hello
                 </Text>

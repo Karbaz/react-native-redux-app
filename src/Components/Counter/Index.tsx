@@ -6,7 +6,8 @@ import {style} from './Styles'
 
 type Props = {
     counter: any,
-    dispatch: any
+    dispatch: any,
+    navigation:any
 }
 
 type State = {
@@ -15,6 +16,11 @@ type State = {
 
 
 export class Counter extends Component<Props, State> {
+
+    static navigationOptions = {
+        title: 'Counter',
+      };
+    
 
     constructor(props: Props) {
         super(props)
@@ -31,6 +37,7 @@ export class Counter extends Component<Props, State> {
     }
 
     render() {
+
         return (
             <View style={{ marginTop: 100 }}>
                 <TouchableOpacity onPress={() => {
@@ -45,7 +52,7 @@ export class Counter extends Component<Props, State> {
                 </Text>
 
                 <TouchableOpacity onPress={() => {
-                    this.a(false)
+                    this.props.navigation.popToTop()
                 }}>
                     <Text>CLick</Text>
                 </TouchableOpacity>
@@ -62,6 +69,7 @@ const mapDispatchToProps = (dispatch: any, ownProps: any) => {
 }
 
 const mapStateToProps = (state: any, ownProps: any) => {
+    console.log(state,"[]")
     return {
         counter: state.CounterReducer
     }
