@@ -1,11 +1,14 @@
 import {
-    createBottomTabNavigator,
-    createStackNavigator,
-  } from 'react-navigation';
+  createStackNavigator,
+} from 'react-navigation';
 import Home from '../../Components/Home/Index'
 import AboutUs from '../../Components/AboutUs/Index'
+import Counter from '../../Components/Counter/Index'
+import Services from '../../Components/Services/Index'
 
-  export const tabTwoStackNavigator = createStackNavigator({
-        Home:Home,
-        AboutUs:AboutUs
-  })    
+export const tabTwoStackNavigator = createStackNavigator({
+  Home: Home,
+  AboutUs: AboutUs,
+  Counter: Counter,
+  Services: Services
+})    

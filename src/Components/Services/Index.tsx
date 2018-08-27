@@ -1,15 +1,14 @@
 import React, { Component } from 'react'
+import { connect } from "react-redux"
 import { Text, SafeAreaView, StatusBar, Button } from "react-native"
-import { connect } from 'react-redux'
 
 type Props = { navigation: any }
 type State = {}
 
 
-class AboutUs extends Component<Props, State> {
-
+class Services extends Component<Props, State> {
   static navigationOptions = {
-    headerTitle: <Text>About Us</Text>,
+    headerTitle: "Services",
     headerRight: (
       <Button
         onPress={() => alert('This is a button!')}
@@ -20,18 +19,17 @@ class AboutUs extends Component<Props, State> {
   }
   render() {
     return (
-      <SafeAreaView style={{ flex: 1, backgroundColor: 'maroon', justifyContent: 'center', alignItems: 'center' }}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: 'red', justifyContent: 'center', alignItems: 'center' }}>
         <StatusBar barStyle="light-content" backgroundColor="#6a51ae" />
         <Text onPress={() => {
-          this.props.navigation.push("Counter")
+          this.props.navigation.popToTop()
         }}>
-          About Us
+          Services
         </Text>
       </SafeAreaView>
     )
   }
 }
-
 
 const mapStateToProps = (state: any, ownProps: any) => {
   return {
@@ -39,5 +37,4 @@ const mapStateToProps = (state: any, ownProps: any) => {
   }
 }
 
-export default connect(mapStateToProps)(AboutUs)
-
+export default connect(mapStateToProps)(Services)

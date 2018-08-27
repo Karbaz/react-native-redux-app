@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { Text, Button , SafeAreaView, SafeAreaViewBase,StatusBar} from "react-native"
-import { HeaderBackButton } from 'react-navigation';
+import { Text, Button , SafeAreaView,StatusBar} from "react-native"
+import {connect} from "react-redux"
 
-type Props = { navigation: any, navigationOptions: any }
+type Props = { navigation: any, navigationOptions: any,counter:any }
 type State = {}
 
 export class Home extends Component<Props, State> {
@@ -13,7 +12,7 @@ export class Home extends Component<Props, State> {
     }
 
     static navigationOptions = {
-        headerTitle: <Text>Hello</Text>,
+        headerTitle: <Text>Home</Text>,
         headerRight: (
             <Button
                 onPress={() => alert('This is a button!')}
@@ -21,27 +20,27 @@ export class Home extends Component<Props, State> {
                 color="#fff"
             />
         ),
-        headerLeft:(
-            <Button
-            onPress={() => alert('This is a button!')}
-            title="Save"
-            color="red"
-        />
-        )
     }
 
     render() {
         return (
-            <SafeAreaView style={{flex:1,backgroundColor:'blue'}}>
+            <SafeAreaView style={{flex:1,backgroundColor:'blue',justifyContent: 'center',alignItems: 'center'}}>
                 <StatusBar barStyle="light-content" backgroundColor="#6a51ae"/>
                 <Text onPress={()=>{
-                    this.props.navigation.push("Counter")
+                    this.props.navigation.push("AboutUs")
                 }}>
-                    Hello
+                    Welcome to Home
                 </Text>
             </SafeAreaView>
         )
     }
 }
 
-export default Home
+const mapStateToProps = (state: any, ownProps: any) => {
+    return {
+        counter: state.CounterReducer
+    }
+}
+
+export default connect(mapStateToProps)(Home)
+
