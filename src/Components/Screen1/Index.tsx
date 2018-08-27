@@ -6,27 +6,27 @@ type Props = { navigation: any }
 type State = {}
 
 
-class AboutUs extends Component<Props, State> {
+class ScreenOne extends Component<Props, State> {
 
   static navigationOptions = {
-    headerTitle: <Text>About Us</Text>,
+    headerTitle: "Screen 1",
     headerRight: (
       <Button
         onPress={() => alert('This is a button!')}
         title="Info"
-        color="#fff"
+        color="black"
       />
     ),
   }
   
   render() {
     return (
-      <SafeAreaView style={{ flex: 1, backgroundColor: 'maroon', justifyContent: 'center', alignItems: 'center' }}>
+      <SafeAreaView style={{ flex: 1, backgroundColor: 'blue', justifyContent: 'center', alignItems: 'center' }}>
         <StatusBar barStyle="light-content" backgroundColor="#6a51ae" />
-        <Text onPress={() => {
-          this.props.navigation.push("Counter")
+        <Text style={{fontSize:20}} onPress={() => {
+          this.props.navigation.push("Screen2")
         }}>
-          About Us
+          Screen 1
         </Text>
       </SafeAreaView>
     )
@@ -40,5 +40,5 @@ const mapStateToProps = (state: any, ownProps: any) => {
   }
 }
 
-export default connect(mapStateToProps)(AboutUs)
+export default connect(mapStateToProps)(ScreenOne)
 

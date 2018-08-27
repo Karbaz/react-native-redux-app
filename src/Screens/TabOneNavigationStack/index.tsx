@@ -1,17 +1,23 @@
 import {
   createStackNavigator,
 } from 'react-navigation';
-import Home from '../../Components/Home/Index'
-import AboutUs from '../../Components/AboutUs/Index'
+
+
+import Screen1 from "../../Components/Screen1/Index"
+import Screen2 from "../../Components/Screen2/Index"
+import Screen3 from "../../Components/Screen3/Index"
+import Screen4 from "../../Components/Screen4/Index"
+import Screen5 from "../../Components/Screen5/Index"
 import Counter from '../../Components/Counter/Index'
-import Services from '../../Components/Services/Index'
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import React, { Component } from 'react'
-import { Text, SafeAreaView, StatusBar, Button } from "react-native"
+
 
 export const tabOneStackNavigator = createStackNavigator({
-  Home: Home,
-  AboutUs: AboutUs,
-  Counter: Counter,
-  Services: Services
+  Screen1:Screen1,
+  Screen2:Screen2,
+  Screen3:Screen3,
+  Screen4:Screen4,
+  Screen5:Screen5,
+  Counter:Counter
+},{
+  initialRouteName : 'Screen1'
 })
