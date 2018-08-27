@@ -10,15 +10,15 @@ export const CounterReducer = function (state = initState, action: any) {
     switch (action.type) {
         case INC:
             return {
+                count:state.count +=1,
                 ...state,
-                count: initState.count++,
             }
             break;
 
         case DEC:
             return {
+                count: state.count -=1,
                 ...state,
-                count: initState.count--
             }
             break;
 

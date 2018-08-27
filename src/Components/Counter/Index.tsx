@@ -31,10 +31,15 @@ export class Counter extends Component<Props, State> {
         super(props)
     }
 
-    a = (action: boolean) => {
+    setAddCounter = () => {
         this.props.dispatch({
-            type: "INC",
-            payload: 2
+            type: "INC"
+        })
+    }
+
+    setDesCounter = () => {
+        this.props.dispatch({
+            type: "DEC"
         })
     }
 
@@ -43,11 +48,11 @@ export class Counter extends Component<Props, State> {
         return (
             <SafeAreaView style={{ flex: 1, backgroundColor: 'gray', justifyContent: 'center', alignItems: 'center' }}>
                 <StatusBar barStyle="light-content" backgroundColor="#6a51ae" />
-                <View style={{ marginTop: 100 }}>
-                    <TouchableOpacity onPress={() => {
-                        this.a(true)
+                <View style={{flexDirection:'row'}}>
+                    <TouchableOpacity style={{padding:10}} onPress={() => {
+                        this.setAddCounter()
                     }}>
-                        <Text>CLick</Text>
+                        <Text style={{fontSize:20}}>+</Text>
                     </TouchableOpacity>
                     <Text style={style.color}>
                         {
@@ -55,10 +60,10 @@ export class Counter extends Component<Props, State> {
                         }
                     </Text>
 
-                    <TouchableOpacity onPress={() => {
-                        this.props.navigation.push("Services")
+                    <TouchableOpacity style={{padding:10}} onPress={() => {
+                        this.setDesCounter()
                     }}>
-                        <Text>CLick</Text>
+                        <Text style={{fontSize:20}}>-</Text>
                     </TouchableOpacity>
                 </View>
             </SafeAreaView>

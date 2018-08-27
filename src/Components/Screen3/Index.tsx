@@ -1,35 +1,31 @@
 import React, { Component } from 'react'
-import { connect } from "react-redux"
 import { Text, SafeAreaView, StatusBar, Button } from "react-native"
+import { connect } from 'react-redux'
 
 type Props = { navigation: any }
 type State = {}
 
 
-class Services extends Component<Props, State> {
+class ScreenThree extends Component<Props, State> {
+
   static navigationOptions = {
-    headerTitle: "Services",
-    headerRight: (
-      <Button
-        onPress={() => alert('This is a button!')}
-        title="Info"
-        color="#fff"
-      />
-    ),
+    headerTitle: "Screen 3",
   }
+  
   render() {
     return (
       <SafeAreaView style={{ flex: 1, backgroundColor: 'red', justifyContent: 'center', alignItems: 'center' }}>
         <StatusBar barStyle="light-content" backgroundColor="#6a51ae" />
-        <Text onPress={() => {
-          this.props.navigation.popToTop()
+        <Text style={{fontSize:20}} onPress={() => {
+          this.props.navigation.push("Screen4")
         }}>
-          Services
+          Screen 3
         </Text>
       </SafeAreaView>
     )
   }
 }
+
 
 const mapStateToProps = (state: any, ownProps: any) => {
   return {
@@ -37,4 +33,5 @@ const mapStateToProps = (state: any, ownProps: any) => {
   }
 }
 
-export default connect(mapStateToProps)(Services)
+export default connect(mapStateToProps)(ScreenThree)
+

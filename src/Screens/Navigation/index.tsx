@@ -6,7 +6,6 @@ import { tabFourStackNavigator } from "../TabFourNavigationStack/index"
 import { tabFiveStackNavigator } from "../TabFiveNavigationStack/index"
 import FontAwesome from 'react-native-vector-icons/Ionicons';
 import React, { Component } from 'react'
-import { Text, Button, SafeAreaView, StatusBar, NativeModules } from "react-native"
 
 const getTabBarIcon=(navigation:any)=>{
     return <FontAwesome name={"ios-home"} color={navigation.navigation.isFocused() ? "blue" : "gray"} size={20} />
