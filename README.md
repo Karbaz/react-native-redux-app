@@ -6,4 +6,6 @@
 
 **redux**
 
+**ios**
+
 [[ App ]]( https://youtu.be/p1wAij59DrM)
