@@ -4,6 +4,6 @@
 
 **react-navigation**
 
-**reudx**
+**redux**
 
 [[ App ]]( https://youtu.be/p1wAij59DrM)
